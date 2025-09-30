@@ -1,0 +1,634 @@
+[
+  {
+    "policy_id": "HLT_IND_001",
+    "name": "Arogya Shield - Silver",
+    "type": "health",
+    "description": "A basic individual health plan for young professionals. Covers hospitalization and pre/post-hospitalization expenses.",
+    "sum_insured": [300000, 500000],
+    "premium_yearly": {"300000": 7500, "500000": 9800},
+    "eligibility": {"min_age": 21, "max_age": 45},
+    "waiting_period_days": 30,
+    "exclusions": ["Cosmetic surgery", "Pre-existing diseases for 36 months", "Dental treatments"],
+    "riders": [
+      {"id": "HOS_CASH_BASIC", "name": "Daily Hospital Cash", "premium": 1000}
+    ]
+  },
+  {
+    "policy_id": "HLT_IND_002",
+    "name": "Arogya Shield - Gold",
+    "type": "health",
+    "description": "A comprehensive individual health plan with higher coverage and added benefits like maternity cover.",
+    "sum_insured": [500000, 1000000, 1500000],
+    "premium_yearly": {"500000": 12500, "1000000": 18000, "1500000": 22000},
+    "eligibility": {"min_age": 21, "max_age": 50},
+    "waiting_period_days": 30,
+    "exclusions": ["Cosmetic surgery", "Pre-existing diseases for 24 months"],
+    "riders": [
+      {"id": "HOS_CASH_PLUS", "name": "Enhanced Hospital Cash", "premium": 1500},
+      {"id": "CRIT_ILL_BASIC", "name": "Basic Critical Illness Cover", "premium": 2500},
+      {"id": "MATERNITY_COV", "name": "Maternity Benefit (9 month waiting)", "premium": 4000}
+    ]
+  },
+  {
+    "policy_id": "HLT_FAM_001",
+    "name": "Parivar Suraksha - Essential",
+    "type": "health",
+    "description": "A family floater plan covering 2 adults and up to 2 children under a single premium.",
+    "sum_insured": [500000, 1000000],
+    "premium_yearly": {"500000": 18000, "1000000": 25000},
+    "eligibility": {"min_age": 25, "max_age": 55, "child_max_age": 21},
+    "waiting_period_days": 30,
+    "exclusions": ["Pre-existing diseases for 48 months", "Infertility treatments"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_FAM_002",
+    "name": "Parivar Suraksha - Premium",
+    "type": "health",
+    "description": "An extensive family floater plan with higher sums insured, annual check-ups, and lower waiting periods.",
+    "sum_insured": [1500000, 2500000, 5000000],
+    "premium_yearly": {"1500000": 32000, "2500000": 45000, "5000000": 60000},
+    "eligibility": {"min_age": 25, "max_age": 60, "child_max_age": 25},
+    "waiting_period_days": 30,
+    "exclusions": ["Pre-existing diseases for 24 months"],
+    "riders": [
+      {"id": "CRIT_ILL_FAM", "name": "Family Critical Illness Cover", "premium": 5000},
+      {"id": "GLOBAL_COV", "name": "Global Hospitalization Cover", "premium": 8000}
+    ]
+  },
+  {
+    "policy_id": "HLT_SENIOR_001",
+    "name": "Senior Citizen Care",
+    "type": "health",
+    "description": "A dedicated health plan for senior citizens with co-payment clauses and focus on age-related ailments.",
+    "sum_insured": [300000, 500000],
+    "premium_yearly": {"300000": 28000, "500000": 38000},
+    "eligibility": {"min_age": 61, "max_age": 75},
+    "waiting_period_days": 60,
+    "exclusions": ["Joint replacement for first 3 years", "Cosmetic procedures"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_CRIT_001",
+    "name": "Critical Illness Shield",
+    "type": "health",
+    "description": "A standalone critical illness policy providing a lump sum payment upon diagnosis of listed critical illnesses.",
+    "sum_insured": [1000000, 2000000],
+    "premium_yearly": {"1000000": 8000, "2000000": 14000},
+    "eligibility": {"min_age": 30, "max_age": 55},
+    "waiting_period_days": 90,
+    "exclusions": ["Cancer for first 180 days", "Illnesses due to smoking or alcohol"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_TOPUP_001",
+    "name": "Health Booster - Top Up",
+    "type": "health",
+    "description": "A super top-up plan that activates after your base policy's sum insured is exhausted. Requires a deductible.",
+    "sum_insured": [1000000, 2000000],
+    "premium_yearly": {"1000000": 3500, "2000000": 5500},
+    "eligibility": {"min_age": 25, "max_age": 60},
+    "waiting_period_days": 30,
+    "exclusions": ["Standard exclusions apply"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_WOMEN_001",
+    "name": "Women's Wellness Plan",
+    "type": "health",
+    "description": "A specialized health plan for women covering female-specific critical illnesses and maternity benefits.",
+    "sum_insured": [500000, 1000000],
+    "premium_yearly": {"500000": 13000, "1000000": 19000},
+    "eligibility": {"min_age": 25, "max_age": 45},
+    "waiting_period_days": 30,
+    "exclusions": ["Infertility treatments"],
+    "riders": [
+      {"id": "CANCER_COV_W", "name": "Female Cancer Cover", "premium": 2000}
+    ]
+  },
+  {
+    "policy_id": "HLT_DIABETES_001",
+    "name": "Diabetes SafeGuard",
+    "type": "health",
+    "description": "A health insurance plan specifically designed for individuals with Type 2 Diabetes, covering related complications.",
+    "sum_insured": [300000, 500000],
+    "premium_yearly": {"300000": 18000, "500000": 26000},
+    "eligibility": {"min_age": 35, "max_age": 60},
+    "waiting_period_days": 60,
+    "exclusions": ["Requires a medical check-up before approval"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_HNI_001",
+    "name": "Global Wellness Platinum",
+    "type": "health",
+    "description": "A high-end health plan for HNIs with very high sum insured and international coverage.",
+    "sum_insured": [10000000, 20000000],
+    "premium_yearly": {"10000000": 150000, "20000000": 250000},
+    "eligibility": {"min_age": 30, "max_age": 60},
+    "waiting_period_days": 30,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_COVID_001",
+    "name": "Covid Kavach Policy",
+    "type": "health",
+    "description": "Standard COVID-19 specific policy as per IRDAI guidelines, covering hospitalization expenses.",
+    "sum_insured": [250000, 500000],
+    "premium_yearly": {"250000": 4000, "500000": 5500},
+    "eligibility": {"min_age": 18, "max_age": 65},
+    "waiting_period_days": 15,
+    "exclusions": ["Home quarantine expenses"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_AROGYA_001",
+    "name": "Arogya Sanjeevani Policy",
+    "type": "health",
+    "description": "A standard health insurance product with uniform features and benefits across all insurance companies in India.",
+    "sum_insured": [500000],
+    "premium_yearly": {"500000": 10500},
+    "eligibility": {"min_age": 18, "max_age": 65},
+    "waiting_period_days": 30,
+    "exclusions": ["Standard exclusions as per IRDAI"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_PA_001",
+    "name": "Personal Accident Cover",
+    "type": "health",
+    "description": "Provides financial protection against accidental death or disability.",
+    "sum_insured": [1000000, 2500000],
+    "premium_yearly": {"1000000": 2000, "2500000": 4500},
+    "eligibility": {"min_age": 18, "max_age": 65},
+    "waiting_period_days": 0,
+    "exclusions": ["Injuries from adventure sports"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_DAYCARE_001",
+    "name": "DayCare Shield",
+    "type": "health",
+    "description": "Focuses on covering daycare procedures that do not require 24-hour hospitalization.",
+    "sum_insured": [200000, 300000],
+    "premium_yearly": {"200000": 6000, "300000": 8000},
+    "eligibility": {"min_age": 18, "max_age": 55},
+    "waiting_period_days": 30,
+    "exclusions": ["Standard exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "HLT_AYUSH_001",
+    "name": "AYUSH Benefit Plan",
+    "type": "health",
+    "description": "Covers in-patient hospitalization expenses under Ayurveda, Yoga, Unani, Siddha, and Homeopathy.",
+    "sum_insured": [200000, 400000],
+    "premium_yearly": {"200000": 7000, "400000": 10000},
+    "eligibility": {"min_age": 18, "max_age": 60},
+    "waiting_period_days": 30,
+    "exclusions": ["Standard exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_BASIC_001",
+    "name": "e-Term Shield Basic",
+    "type": "term",
+    "description": "A pure online term insurance plan providing high cover at a low premium. Death benefit only.",
+    "sum_insured": [5000000, 10000000],
+    "premium_yearly": {"5000000": 8000, "10000000": 12000},
+    "eligibility": {"min_age": 25, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": ["Suicide in the first year"],
+    "riders": [
+      {"id": "ACC_DEATH_BASIC", "name": "Accidental Death Benefit", "premium": 2000}
+    ]
+  },
+  {
+    "policy_id": "TERM_ROP_001",
+    "name": "Term Plan with Return of Premium",
+    "type": "term",
+    "description": "A term plan where all premiums are returned if the policyholder survives the policy term.",
+    "sum_insured": [5000000, 10000000],
+    "premium_yearly": {"5000000": 18000, "10000000": 28000},
+    "eligibility": {"min_age": 25, "max_age": 45},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_WHOLE_001",
+    "name": "Whole Life Term Plan",
+    "type": "term",
+    "description": "Provides life cover for the entire life of the insured (up to 99 years).",
+    "sum_insured": [5000000],
+    "premium_yearly": {"5000000": 25000},
+    "eligibility": {"min_age": 30, "max_age": 55},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_INC_001",
+    "name": "Increasing Term Cover",
+    "type": "term",
+    "description": "A term plan where the sum assured increases by a fixed percentage every year.",
+    "sum_insured": [5000000],
+    "premium_yearly": {"5000000": 11000},
+    "eligibility": {"min_age": 25, "max_age": 45},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_DEC_001",
+    "name": "Decreasing Term Cover (Loan Shield)",
+    "type": "term",
+    "description": "Ideal for covering large loans like a home loan, where the cover amount decreases over the term.",
+    "sum_insured": [7500000],
+    "premium_yearly": {"7500000": 9000},
+    "eligibility": {"min_age": 30, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_JOINT_001",
+    "name": "Joint Life Term Plan",
+    "type": "term",
+    "description": "A single policy that covers two lives (e.g., husband and wife) and pays out on the first death.",
+    "sum_insured": [10000000],
+    "premium_yearly": {"10000000": 20000},
+    "eligibility": {"min_age": 28, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_SINGLE_001",
+    "name": "Single Premium Term Plan",
+    "type": "term",
+    "description": "Pay the premium once and get life cover for the entire policy duration.",
+    "sum_insured": [5000000],
+    "premium_yearly": {"5000000": 150000},
+    "eligibility": {"min_age": 30, "max_age": 60},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_SMOKER_001",
+    "name": "Term Shield for Smokers",
+    "type": "term",
+    "description": "A specific term plan for smokers with slightly higher premiums.",
+    "sum_insured": [5000000, 10000000],
+    "premium_yearly": {"5000000": 14000, "10000000": 22000},
+    "eligibility": {"min_age": 25, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "TERM_CRIT_RIDER_001",
+    "name": "e-Term with Critical Illness Rider",
+    "type": "term",
+    "description": "A pure term plan with an inbuilt critical illness rider that pays a lump sum on diagnosis.",
+    "sum_insured": [5000000, 10000000],
+    "premium_yearly": {"5000000": 13000, "10000000": 20000},
+    "eligibility": {"min_age": 25, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": ["Suicide in the first year"],
+    "riders": [
+      {"id": "CRIT_ILL_TERM", "name": "Accelerated Critical Illness Benefit", "premium": 0}
+    ]
+  },
+  {
+    "policy_id": "TERM_PLUS_001",
+    "name": "Term Shield Plus",
+    "type": "term",
+    "description": "A comprehensive term plan with multiple riders available for customization.",
+    "sum_insured": [10000000, 20000000],
+    "premium_yearly": {"10000000": 15000, "20000000": 25000},
+    "eligibility": {"min_age": 30, "max_age": 55},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": [
+      {"id": "ACC_DEATH_PLUS", "name": "Enhanced Accidental Death Benefit", "premium": 3000},
+      {"id": "WAIVER_PREM", "name": "Waiver of Premium on Disability", "premium": 1500}
+    ]
+  },
+  {
+    "policy_id": "LIFE_ENDOW_001",
+    "name": "Jeevan Anand",
+    "type": "life",
+    "description": "A classic endowment plan offering a combination of savings and protection. Provides maturity benefit and death benefit.",
+    "sum_insured": [500000, 1000000],
+    "premium_yearly": {"500000": 25000, "1000000": 48000},
+    "eligibility": {"min_age": 18, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard life exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_ULIP_001",
+    "name": "Dhan Growth ULIP",
+    "type": "life",
+    "description": "A Unit Linked Insurance Plan where part of the premium is invested in market funds, offering potential for high returns.",
+    "sum_insured": [1000000, 2500000],
+    "premium_yearly": {"1000000": 50000, "2500000": 100000},
+    "eligibility": {"min_age": 25, "max_age": 55},
+    "waiting_period_days": 0,
+    "exclusions": ["Market risks apply to investment component"],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_CHILD_001",
+    "name": "Future Scholar Plan",
+    "type": "life",
+    "description": "A child-focused plan that provides funds for education and other milestones, with a waiver of premium rider.",
+    "sum_insured": [1000000, 2000000],
+    "premium_yearly": {"1000000": 60000, "2000000": 110000},
+    "eligibility": {"min_age": 25, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": [
+      {"id": "WAIVER_PREM_CHILD", "name": "Waiver of Premium on Parent's Death", "premium": 0}
+    ]
+  },
+  {
+    "policy_id": "LIFE_MONEYBACK_001",
+    "name": "Money Back Advantage",
+    "type": "life",
+    "description": "Provides periodic payouts (survival benefits) during the policy term, along with a maturity benefit.",
+    "sum_insured": [500000, 1000000],
+    "premium_yearly": {"500000": 35000, "1000000": 65000},
+    "eligibility": {"min_age": 20, "max_age": 55},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_PENSION_001",
+    "name": "Retire Rich Pension Plan",
+    "type": "life",
+    "description": "A retirement solution that helps build a corpus and provides regular annuity post-retirement.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 50000},
+    "eligibility": {"min_age": 30, "max_age": 60},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_TAX_001",
+    "name": "Tax Saver Plus",
+    "type": "life",
+    "description": "An endowment plan focused on providing tax benefits under Section 80C along with life cover.",
+    "sum_insured": [500000],
+    "premium_yearly": {"500000": 30000},
+    "eligibility": {"min_age": 25, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_GUARANTEED_001",
+    "name": "Guaranteed Income Plan",
+    "type": "life",
+    "description": "A non-participating plan offering guaranteed regular income for a fixed period.",
+    "sum_insured": [1000000],
+    "premium_yearly": {"1000000": 100000},
+    "eligibility": {"min_age": 30, "max_age": 55},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_SARAL_001",
+    "name": "Saral Jeevan Bima",
+    "type": "life",
+    "description": "A standard, simple term life insurance plan mandated by IRDAI for easy understanding.",
+    "sum_insured": [500000, 1000000, 2500000],
+    "premium_yearly": {"500000": 3000, "1000000": 4500, "2500000": 7000},
+    "eligibility": {"min_age": 18, "max_age": 65},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard exclusions as per IRDAI"],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_WHOLELIFE_001",
+    "name": "Legacy Whole Life",
+    "type": "life",
+    "description": "A participating whole life plan that provides cover up to 100 years and accrues bonuses.",
+    "sum_insured": [1000000, 2500000],
+    "premium_yearly": {"1000000": 30000, "2500000": 70000},
+    "eligibility": {"min_age": 25, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_COMBI_001",
+    "name": "Sampoorna Raksha (Combi Plan)",
+    "type": "life",
+    "description": "A combination of term insurance and a ULIP, offering both protection and investment.",
+    "sum_insured": [5000000],
+    "premium_yearly": {"5000000": 60000},
+    "eligibility": {"min_age": 25, "max_age": 45},
+    "waiting_period_days": 0,
+    "exclusions": ["Market risks apply"],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_KEYMAN_001",
+    "name": "Keyman Business Shield",
+    "type": "life",
+    "description": "Insurance purchased by a company on the life of a key employee to protect against business losses.",
+    "sum_insured": [10000000],
+    "premium_yearly": {"10000000": 80000},
+    "eligibility": {"min_age": 25, "max_age": 60},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_ONLINE_001",
+    "name": "Click2Protect Online",
+    "type": "life",
+    "description": "A comprehensive online plan with multiple cover options: life, increasing cover, and income replacement.",
+    "sum_insured": [10000000],
+    "premium_yearly": {"10000000": 14000},
+    "eligibility": {"min_age": 18, "max_age": 55},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard term exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_SPOUSE_001",
+    "name": "Smart Woman Plan",
+    "type": "life",
+    "description": "A plan tailored for working women, offering life cover, savings, and critical illness benefits.",
+    "sum_insured": [2500000],
+    "premium_yearly": {"2500000": 40000},
+    "eligibility": {"min_age": 25, "max_age": 50},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_GROUP_001",
+    "name": "Group Term Life Insurance",
+    "type": "life",
+    "description": "A term insurance plan offered by employers to their employees.",
+    "sum_insured": [5000000],
+    "premium_yearly": {"5000000": 6000},
+    "eligibility": {"min_age": 18, "max_age": 60},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "LIFE_MICRO_001",
+    "name": "Micro Bachat Plan",
+    "type": "life",
+    "description": "A micro-insurance plan for low-income individuals, offering small-ticket savings and protection.",
+    "sum_insured": [100000, 200000],
+    "premium_yearly": {"100000": 2000, "200000": 3500},
+    "eligibility": {"min_age": 18, "max_age": 55},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "MOTOR_CAR_COMP_001",
+    "name": "Car Secure - Comprehensive",
+    "type": "motor",
+    "description": "Comprehensive car insurance covering own damage and third-party liability.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 15000},
+    "eligibility": {"min_age": 18, "max_age": 70},
+    "waiting_period_days": 0,
+    "exclusions": ["Drunk driving", "Driving without a valid license"],
+    "riders": [
+      {"id": "ZERO_DEP", "name": "Zero Depreciation", "premium": 2500},
+      {"id": "RSA", "name": "Roadside Assistance", "premium": 1000}
+    ]
+  },
+  {
+    "policy_id": "MOTOR_CAR_TP_001",
+    "name": "Car Secure - Third Party Only",
+    "type": "motor",
+    "description": "Covers only legal liability for damages to a third party. Does not cover own damage.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 7800},
+    "eligibility": {"min_age": 18, "max_age": 70},
+    "waiting_period_days": 0,
+    "exclusions": ["Own damage to the vehicle"],
+    "riders": []
+  },
+  {
+    "policy_id": "MOTOR_TW_COMP_001",
+    "name": "Bike Secure - Comprehensive",
+    "type": "motor",
+    "description": "Comprehensive insurance for two-wheelers, covering own damage and third-party liability.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 2500},
+    "eligibility": {"min_age": 18, "max_age": 70},
+    "waiting_period_days": 0,
+    "exclusions": ["Drunk riding"],
+    "riders": [
+      {"id": "ZERO_DEP_TW", "name": "Zero Depreciation", "premium": 500}
+    ]
+  },
+  {
+    "policy_id": "MOTOR_PAYD_001",
+    "name": "Pay As You Drive",
+    "type": "motor",
+    "description": "Car insurance where the premium depends on the number of kilometers driven.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 12000},
+    "eligibility": {"min_age": 25, "max_age": 60},
+    "waiting_period_days": 0,
+    "exclusions": ["Standard motor exclusions"],
+    "riders": []
+  },
+  {
+    "policy_id": "MOTOR_EV_001",
+    "name": "EV Secure",
+    "type": "motor",
+    "description": "Specialized insurance for electric vehicles, covering battery and other EV-specific parts.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 20000},
+    "eligibility": {"min_age": 18, "max_age": 70},
+    "waiting_period_days": 0,
+    "exclusions": ["Damage to personal charging equipment"],
+    "riders": [
+      {"id": "BATT_COV", "name": "Battery Protect", "premium": 3000}
+    ]
+  },
+  {
+    "policy_id": "MOTOR_COMM_001",
+    "name": "Commercial Vehicle Shield",
+    "type": "motor",
+    "description": "Insurance for commercial vehicles like trucks and taxis.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 35000},
+    "eligibility": {"min_age": 18, "max_age": 65},
+    "waiting_period_days": 0,
+    "exclusions": ["Overloading of vehicle"],
+    "riders": []
+  },
+  {
+    "policy_id": "MOTOR_CAR_PLUS_001",
+    "name": "Car Secure - Platinum",
+    "type": "motor",
+    "description": "A premium car insurance plan with all major riders included as standard.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 22000},
+    "eligibility": {"min_age": 18, "max_age": 70},
+    "waiting_period_days": 0,
+    "exclusions": ["Drunk driving"],
+    "riders": [
+      {"id": "ZERO_DEP", "name": "Zero Depreciation", "premium": 0},
+      {"id": "RSA", "name": "Roadside Assistance", "premium": 0},
+      {"id": "ENG_PROT", "name": "Engine Protect", "premium": 0},
+      {"id": "KEY_REPLACE", "name": "Key Replacement Cover", "premium": 0}
+    ]
+  },
+  {
+    "policy_id": "MOTOR_VINTAGE_001",
+    "name": "Vintage Car Cover",
+    "type": "motor",
+    "description": "Specialized insurance for vintage and classic cars, based on an agreed value.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 50000},
+    "eligibility": {"min_age": 30, "max_age": 80},
+    "waiting_period_days": 0,
+    "exclusions": ["Not for regular daily use"],
+    "riders": []
+  },
+  {
+    "policy_id": "MOTOR_LONGTERM_001",
+    "name": "Long Term Two-Wheeler Policy",
+    "type": "motor",
+    "description": "A 5-year third-party and 1-year own-damage policy for new two-wheelers, as per regulations.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 8000},
+    "eligibility": {"min_age": 18, "max_age": 70},
+    "waiting_period_days": 0,
+    "exclusions": [],
+    "riders": []
+  },
+  {
+    "policy_id": "MOTOR_TYRE_001",
+    "name": "Tyre Secure",
+    "type": "motor",
+    "description": "An add-on cover for damage to tyres, such as cuts, bulges, or bursts.",
+    "sum_insured": [0],
+    "premium_yearly": {"0": 1200},
+    "eligibility": {"min_age": 18, "max_age": 70},
+    "waiting_period_days": 0,
+    "exclusions": ["Routine wear and tear"],
+    "riders": []
+  }
+]
